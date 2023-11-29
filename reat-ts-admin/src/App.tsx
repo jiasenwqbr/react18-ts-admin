@@ -4,7 +4,7 @@ function App() {
   return (
     <>
       <div>
-       顶级组件
+      顶级组件
       </div>
     </>
   )
