@@ -128,6 +128,29 @@ npm i D @types/node
 
 
 
+## 七、Antd Design 初步引入
+
+安装Antd Design
+
+```shell
+// npm
+npm install antd --save
+// yarn 
+yarn add antd
+```
+
+安装图标所需的模块
+
+```shell
+// npm 
+npm install --save @ant-design/icons
+
+// yarn 
+yarn add @ant-design/icons
+```
+
+
+
 
 
 
