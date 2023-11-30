@@ -8,8 +8,8 @@ function App() {
     <>
       <div>
         {count}
-      <Button type='primary'>按钮文字</Button>
-      <FastBackwardOutlined></FastBackwardOutlined>
+        <Button type='primary'>按钮文字</Button>
+        <FastBackwardOutlined style={{fontSize:"40px",color:"red"}}></FastBackwardOutlined>
       </div>
     </>
   )

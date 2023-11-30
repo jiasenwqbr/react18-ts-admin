@@ -151,6 +151,71 @@ yarn add @ant-design/icons
 
 
 
+App组件中引入即可：
+
+```typescript
+import { useState } from 'react'
+import { Button } from 'antd';
+import { FastBackwardOutlined } from '@ant-design/icons';
+import "antd/dist/antd.css";
+function App() {
+  const [count] = useState(0);
+
+  return (
+    <>
+      <div>
+        {count}
+        <Button type='primary'>按钮文字</Button>
+        <FastBackwardOutlined style={{fontSize:"40px",color:"red"}}></FastBackwardOutlined>
+      </div>
+    </>
+  )
+}
+
+export default App
+
+```
+
+## 配置Antd Design样式自动按需引入
+
+安装插件vite-plugin-style-import
+
+```shell
+npm install vite-plugin-style-import@1.4.1 -D
+```
+
+在vite.config.ts中进行配置：
+
+```typescript
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+import * as  path from "path"
+import styleImport,{AntdResolve} from 'vite-plugin-style-import'
+
+// https://vitejs.dev/config/
+export default defineConfig({
+  plugins: [
+    react(),
+    styleImport({
+      resolves:[
+        AntdResolve()
+      ],
+    }),
+  ],
+  resolve:{
+    alias:{
+      "@":path.resolve(__dirname,'./src')
+    }
+  }
+})
+```
+
+安装less
+
+```shell
+npm i less@2.7.1 -D
+```
+
 
 
 
