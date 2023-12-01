@@ -176,7 +176,7 @@ export default App
 
 ```
 
-## 配置Antd Design样式自动按需引入
+## 八、配置Antd Design样式自动按需引入
 
 安装插件vite-plugin-style-import
 
@@ -218,9 +218,88 @@ npm i less@2.7.1 -D
 
 
 
+## 九、路由
+
+ ### 路由的第一种写法
+
+```typescript
+import App from "../App"
+import Home from "../views/Home"
+import About from "../views/About"
+
+import { BrowserRouter,Routes,Route,Navigate } from "react-router-dom"
+// 两种路由模式 ：BrowserRouter（History模式），HashRouter(Hash模式)
+// const baseRouter = () => {
+//     return ()
+// }
+const baseRouter = () => (
+    <BrowserRouter>
+        <Routes>
+            <Route path="/" element={<App/>}>
+                <Route path="/" element={<Navigate to="/home"/>}></Route>
+                <Route path="/home" element={<Home></Home>}></Route>
+                <Route path="/about" element={<About></About>}></Route>
+            </Route>
+        </Routes>
+    </BrowserRouter>
+)
+
+export default baseRouter;
+```
+
+### 路由的第二种写法
+
+```typescript
+import Home from "../views/Home"
+import About from "../views/About"
+import {Navigate} from "react-router-dom"
+const routes = [
+    {
+        path:'/',
+        element:<Navigate to="/home" />
+    },
+    {
+        path:'/home',
+        element:<Home/>
+    },
+    {
+        path:'/about',
+        element:<About/>
+    }
+]
+
+export default routes;
+```
 
 
 
+```typescript
+import { useState } from 'react'
+import { Button } from 'antd';
+import { FastBackwardOutlined } from '@ant-design/icons';
+import {useRoutes} from "react-router-dom"
+import router from "./router"
+function App() {
+  const [count] = useState(0);
+  const outlet = useRoutes(router)
+  return (
+    <>
+      <div>
+        {count}
+        <Button type='primary'>按钮文字</Button>
+        <FastBackwardOutlined style={{fontSize:"40px",color:"red"}}></FastBackwardOutlined>
+        {outlet}
+      </div>
+    </>
+  )
+}
+
+export default App
+```
+
+
+
+### 路由的懒加载
 
 
 
