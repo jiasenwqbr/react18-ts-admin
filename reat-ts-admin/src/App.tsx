@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import { Button } from 'antd';
-import { FastBackwardOutlined } from '@ant-design/icons';
+// import { Button } from 'antd';
+// import { FastBackwardOutlined } from '@ant-design/icons';
 import {useRoutes,Link} from "react-router-dom"
 import router from "./router"
 function App() {
@@ -9,10 +9,9 @@ function App() {
   return (
     <>
       <div>
-        {count}
-        <Button type='primary'>按钮文字</Button>
-        <FastBackwardOutlined style={{fontSize:"40px",color:"red"}}></FastBackwardOutlined>
-        <Link to="/home">Home</Link> | <Link to="/about">About</Link>| <Link to="/user">User</Link>
+        {/* <Button type='primary'>按钮文字</Button>
+        <FastBackwardOutlined style={{fontSize:"40px",color:"red"}}></FastBackwardOutlined> */}
+        {/* <Link to="/home">Home</Link> | <Link to="/about">About</Link>| <Link to="/user">User</Link> */}
         {outlet}
       </div>
     </>
