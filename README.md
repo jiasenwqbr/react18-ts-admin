@@ -305,6 +305,42 @@ export default App
 
 
 
+# e-commerce-admin
+
+创建项目
+
+```shell
+create-react-app e-commerce-admin --template typescript
+```
+
+安装
+
+数据管理： redux react-redux redux-thunk redux-logger
+
+路由： react-router-dom
+
+url请求：axios qs
+
+加载提示： nprogress
+
+重置css : normalize.css
+
+react ui框架库： antd
+
+```shell
+cd e-commerce-admin 
+npm install  redux react-redux redux-thunk redux-logger -S
+npm install react-router-dom axios nprogress normalize.css antd -S
+```
+
+```shell
+npm install sass sass-loader -D
+```
+
+```shell
+npm run
+```
+
 
 
 
