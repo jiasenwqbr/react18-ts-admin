@@ -307,6 +307,8 @@ export default App
 
 # e-commerce-admin
 
+## 一、创建项目
+
 创建项目
 
 ```shell
@@ -340,6 +342,99 @@ npm install sass sass-loader -D
 ```shell
 npm run
 ```
+
+在src下创建目录：
+
+- api 接口
+- router 路由
+- store 仓库
+- utils 工具
+- views 视图页面
+
+
+
+## 二、配置基础路由
+
+router/BaseRouter.tsx
+
+```typescript
+import LoginView from "../views/LoginView";
+import Admin from "../views/admin/AdminView";
+const  baseRouter=[
+    {
+        path:"/",
+        element:<LoginView></LoginView>
+    },
+    {
+        path:"/admin",
+        element:<Admin></Admin>,
+        children:[]
+    }
+];
+
+export default baseRouter;
+```
+
+
+
+router/Index.tsx
+
+```typescript
+import { useRoutes } from "react-router-dom";
+import baseRouter from "./BaseRouter";
+
+function RouterView() {
+    // 创建路由
+    const element = useRoutes(baseRouter);
+    // 返回创建好的路由
+    return (<>{element}</>  );
+}
+// 导出
+export default RouterView;
+```
+
+App.tsx
+
+```typescript
+import {  HashRouter as Router } from "react-router-dom";
+import RouterView from "./router";
+
+function App() {
+  return (
+    <Router>
+      <RouterView></RouterView>
+    </Router>
+  );
+}
+
+export default App;
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
