@@ -1,4 +1,4 @@
-import {  HashRouter as Router } from "react-router-dom";
+import { HashRouter as Router } from "react-router-dom";
 import RouterView from "./router";
 
 function App() {
@@ -8,5 +8,4 @@ function App() {
     </Router>
   );
 }
-
 export default App;

@@ -1,4 +1,4 @@
-import {UserType} from "../type";
+import {UserType} from "../types";
 import request from "../utils/request";
 
 export function login(data: UserType) {
